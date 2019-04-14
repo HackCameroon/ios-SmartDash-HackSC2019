@@ -78,6 +78,19 @@ class ViewController: UIViewController {
                     //                    };
                     //                }
                     
+                    
+                    // TO READ FROM FIREBASE
+//                    ref.child("locations").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+//                        // Get user value
+//                        let value = snapshot.value as? NSDictionary
+//                        let age = value?["age"] as? String ?? ""
+//                        now use age how you like...
+//
+//                        // ...
+//                    }) { (error) in
+//                        print(error.localizedDescription)
+//                    }
+                    
                     // Adding JSON data to Firebase
                     self.ref.child("locations").child(UUID().uuidString).setValue(JSON)
                     
