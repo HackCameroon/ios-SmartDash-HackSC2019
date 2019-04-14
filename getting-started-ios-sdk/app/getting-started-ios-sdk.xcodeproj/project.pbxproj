@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E6C75B92263103F0051586A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C75B82263103F0051586A /* MapViewController.swift */; };
 		1E6C75BB2263121D0051586A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E6C75BA2263121D0051586A /* GoogleService-Info.plist */; };
+		1E6C75C6226340AE0051586A /* CamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C75C5226340AE0051586A /* CamViewController.swift */; };
+		1E6C75C8226340CD0051586A /* NotificationRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C75C7226340CD0051586A /* NotificationRectangle.swift */; };
+		1E6C75CE226342510051586A /* PORenderingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C75CB226342510051586A /* PORenderingView.swift */; };
+		1E6C75CF226342510051586A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C75CC226342510051586A /* CameraViewController.swift */; };
+		1E6C75D0226342510051586A /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E6C75CD226342510051586A /* Logo.png */; };
+		1E6C75D4226342600051586A /* AccidentDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C75D1226342600051586A /* AccidentDetection.swift */; };
+		1E6C75D5226342600051586A /* AccidentDetectionOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C75D2226342600051586A /* AccidentDetectionOutput.swift */; };
+		1E6C75D6226342600051586A /* AccidentClassification.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C75D3226342600051586A /* AccidentClassification.mlmodel */; };
+		1E6C75DA22634CF60051586A /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C75D922634CF60051586A /* CollectionViewController.swift */; };
+		1E6C75DC22634D170051586A /* CollectionViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C75DB22634D170051586A /* CollectionViewControllerCell.swift */; };
+		1E6C75DE22634D780051586A /* NearbyRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C75DD22634D780051586A /* NearbyRectangle.swift */; };
 		3A821154B031CA6661EF8B4A /* libPods-getting-started-ios-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0982F4391F7C4D323383C9E /* libPods-getting-started-ios-sdk.a */; };
 		F80D616C21AF45E2002D3A16 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D616B21AF45E2002D3A16 /* Constants.swift */; };
 		F811532E21A39ABF00CB55E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F811532D21A39ABF00CB55E4 /* AppDelegate.swift */; };
@@ -20,8 +30,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1E6C75B82263103F0051586A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1E6C75BA2263121D0051586A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1E6C75C5226340AE0051586A /* CamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamViewController.swift; sourceTree = "<group>"; };
+		1E6C75C7226340CD0051586A /* NotificationRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRectangle.swift; sourceTree = "<group>"; };
+		1E6C75CB226342510051586A /* PORenderingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PORenderingView.swift; sourceTree = "<group>"; };
+		1E6C75CC226342510051586A /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		1E6C75CD226342510051586A /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		1E6C75D1226342600051586A /* AccidentDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccidentDetection.swift; sourceTree = "<group>"; };
+		1E6C75D2226342600051586A /* AccidentDetectionOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccidentDetectionOutput.swift; sourceTree = "<group>"; };
+		1E6C75D3226342600051586A /* AccidentClassification.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AccidentClassification.mlmodel; sourceTree = "<group>"; };
+		1E6C75D922634CF60051586A /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		1E6C75DB22634D170051586A /* CollectionViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewControllerCell.swift; sourceTree = "<group>"; };
+		1E6C75DD22634D780051586A /* NearbyRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyRectangle.swift; sourceTree = "<group>"; };
 		644BE443C27F5EC802992935 /* Pods-getting-started-ios-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getting-started-ios-sdk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-getting-started-ios-sdk/Pods-getting-started-ios-sdk.debug.xcconfig"; sourceTree = "<group>"; };
 		B0982F4391F7C4D323383C9E /* libPods-getting-started-ios-sdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-getting-started-ios-sdk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A5F95BB1700A236BA41E78 /* Pods-getting-started-ios-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getting-started-ios-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-getting-started-ios-sdk/Pods-getting-started-ios-sdk.release.xcconfig"; sourceTree = "<group>"; };
@@ -48,6 +68,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E6C75C9226341020051586A /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				1E6C75CC226342510051586A /* CameraViewController.swift */,
+				1E6C75CD226342510051586A /* Logo.png */,
+				1E6C75CB226342510051586A /* PORenderingView.swift */,
+				1E6C75CA2263410F0051586A /* AccidentModel */,
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
+		1E6C75CA2263410F0051586A /* AccidentModel */ = {
+			isa = PBXGroup;
+			children = (
+				1E6C75D3226342600051586A /* AccidentClassification.mlmodel */,
+				1E6C75D1226342600051586A /* AccidentDetection.swift */,
+				1E6C75D2226342600051586A /* AccidentDetectionOutput.swift */,
+			);
+			path = AccidentModel;
+			sourceTree = "<group>";
+		};
 		51DAED782A39819CBA32823E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +109,7 @@
 		F811532121A39ABF00CB55E4 = {
 			isa = PBXGroup;
 			children = (
+				1E6C75C9226341020051586A /* Runtime */,
 				F811532C21A39ABF00CB55E4 /* getting-started-ios-sdk */,
 				F811532B21A39ABF00CB55E4 /* Products */,
 				51DAED782A39819CBA32823E /* Pods */,
@@ -87,9 +129,13 @@
 			isa = PBXGroup;
 			children = (
 				F811532D21A39ABF00CB55E4 /* AppDelegate.swift */,
+				1E6C75C5226340AE0051586A /* CamViewController.swift */,
+				1E6C75C7226340CD0051586A /* NotificationRectangle.swift */,
 				F811532F21A39ABF00CB55E4 /* ViewController.swift */,
+				1E6C75D922634CF60051586A /* CollectionViewController.swift */,
+				1E6C75DB22634D170051586A /* CollectionViewControllerCell.swift */,
+				1E6C75DD22634D780051586A /* NearbyRectangle.swift */,
 				F811533121A39ABF00CB55E4 /* Main.storyboard */,
-				1E6C75B82263103F0051586A /* MapViewController.swift */,
 				F811533421A39AC500CB55E4 /* Assets.xcassets */,
 				F811533621A39AC500CB55E4 /* LaunchScreen.storyboard */,
 				F811533921A39AC500CB55E4 /* Info.plist */,
@@ -161,6 +207,7 @@
 			files = (
 				F811533821A39AC500CB55E4 /* LaunchScreen.storyboard in Resources */,
 				F811533521A39AC500CB55E4 /* Assets.xcassets in Resources */,
+				1E6C75D0226342510051586A /* Logo.png in Resources */,
 				F811533321A39ABF00CB55E4 /* Main.storyboard in Resources */,
 				1E6C75BB2263121D0051586A /* GoogleService-Info.plist in Resources */,
 			);
@@ -194,11 +241,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E6C75DA22634CF60051586A /* CollectionViewController.swift in Sources */,
+				1E6C75CE226342510051586A /* PORenderingView.swift in Sources */,
 				F811533021A39ABF00CB55E4 /* ViewController.swift in Sources */,
+				1E6C75C8226340CD0051586A /* NotificationRectangle.swift in Sources */,
+				1E6C75DE22634D780051586A /* NearbyRectangle.swift in Sources */,
 				F863D73221A92CD700C1FDC2 /* InfoViewController.swift in Sources */,
 				F811532E21A39ABF00CB55E4 /* AppDelegate.swift in Sources */,
-				1E6C75B92263103F0051586A /* MapViewController.swift in Sources */,
 				F80D616C21AF45E2002D3A16 /* Constants.swift in Sources */,
+				1E6C75C6226340AE0051586A /* CamViewController.swift in Sources */,
+				1E6C75D4226342600051586A /* AccidentDetection.swift in Sources */,
+				1E6C75D6226342600051586A /* AccidentClassification.mlmodel in Sources */,
+				1E6C75CF226342510051586A /* CameraViewController.swift in Sources */,
+				1E6C75D5226342600051586A /* AccidentDetectionOutput.swift in Sources */,
+				1E6C75DC22634D170051586A /* CollectionViewControllerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +401,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EE32J27TKP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "getting-started-ios-sdk/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -364,6 +424,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EE32J27TKP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "getting-started-ios-sdk/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

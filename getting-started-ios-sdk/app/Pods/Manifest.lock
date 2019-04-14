@@ -67,7 +67,7 @@ DEPENDENCIES:
   - SmartcarAuth
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Firebase
     - FirebaseAnalytics
@@ -97,4 +97,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: d2f22ae16fb6702f3c436ed2739d520b777e29c2
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.5.0

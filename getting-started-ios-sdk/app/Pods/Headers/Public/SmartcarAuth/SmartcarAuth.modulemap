@@ -1,1 +1,6 @@
-../../../Target Support Files/SmartcarAuth/SmartcarAuth.modulemap
+module SmartcarAuth [system] {
+  umbrella header "SmartcarAuth-umbrella.h"
+
+  export *
+  module * { export * }
+}
