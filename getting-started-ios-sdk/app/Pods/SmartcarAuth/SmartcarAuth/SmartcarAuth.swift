@@ -30,13 +30,15 @@ Smartcar Authentication SDK for iOS written in Swift 3.
     - Facilitates the flow with a SFSafariViewController to redirect to Smartcar and retrieve an authorization code
 */
 
-public class SmartcarAuth: NSObject {
+@objc public class SmartcarAuth: NSObject {
 
     var clientId: String
     var redirectUri: String
     var scope: [String]
     var completion: (Error?, String?, String?) -> Any?
     var development: Bool
+    // NSNumber? is used here instead of Bool? because there is no concept of Bool? in Objective-C
+    var testMode: NSNumber?
 
     /**
     Constructor for the SmartcarAuth
@@ -45,15 +47,17 @@ public class SmartcarAuth: NSObject {
         - clientId: app client id
         - redirectUri: app redirect uri
         - scope: app oauth scope
-        - development: optional, shows the mock OEM for testing, defaults to false
+        - development: shows the mock OEM for testing, defaults to false. This is deprecated and has been replaced with testMode.
+        - testMode: optional, launch the Smartcar auth flow in test mode, defaults to nil.
         - completion: callback function called upon the completion of the OAuth flow with the error, the auth code, and the state string
     */
-    public init(clientId: String, redirectUri: String, scope: [String] = [], development: Bool = false, completion: @escaping (Error?, String?, String?) -> Any?) {
+    @objc public init(clientId: String, redirectUri: String, scope: [String] = [], development: Bool =  false, testMode: NSNumber? = nil, completion: @escaping (Error?, String?, String?) -> Any?) {
         self.clientId = clientId
         self.redirectUri = redirectUri
         self.scope = scope
         self.completion = completion
         self.development = development
+        self.testMode = testMode
     }
 
     /**
@@ -64,7 +68,7 @@ public class SmartcarAuth: NSObject {
         - forcePrompt: optional, forces permission screen if set to true, defaults to false
         - viewController: the viewController responsible for presenting the SFSafariView
     */
-    public func launchAuthFlow(state: String? = nil, forcePrompt: Bool = false, viewController: UIViewController) {
+    @objc public func launchAuthFlow(state: String? = nil, forcePrompt: Bool = false, viewController: UIViewController) {
 
         let safariVC = SFSafariViewController(url: URL(string: generateUrl(state: state, forcePrompt: forcePrompt))!)
         viewController.present(safariVC, animated: true, completion: nil)
@@ -81,7 +85,7 @@ public class SmartcarAuth: NSObject {
     authorization request URL
 
     */
-    public func generateUrl(state: String? = nil, forcePrompt: Bool = false) -> String {
+    @objc public func generateUrl(state: String? = nil, forcePrompt: Bool = false) -> String {
         var components = URLComponents(string: "https://\(domain)/oauth/authorize")!
 
         var queryItems: [URLQueryItem] = []
@@ -94,19 +98,25 @@ public class SmartcarAuth: NSObject {
         }
 
         if !scope.isEmpty {
-            if let scopeString = self.scope.joined(separator: " ").addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed) {
-                queryItems.append(URLQueryItem(name: "scope", value: scopeString))
-            }
+            let scopeString = self.scope.joined(separator: " ")
+            queryItems.append(URLQueryItem(name: "scope", value: scopeString))
 
         }
 
         queryItems.append(URLQueryItem(name: "approval_prompt", value: forcePrompt ? "force" : "auto"))
 
-        if let stateString = state?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+        if let stateString = state {
             queryItems.append(URLQueryItem(name: "state", value: stateString))
         }
 
-        queryItems.append(URLQueryItem(name: "mock", value: String(self.development)))
+        // if testMode specified, override self.development
+        var mode = self.development;
+        if (self.testMode != nil) {
+          // convert NSNumber to Bool
+           mode = self.testMode!.boolValue;
+        }
+
+        queryItems.append(URLQueryItem(name: "mode", value: mode ? "test" : "live"))
 
         components.queryItems = queryItems
 
@@ -123,7 +133,7 @@ public class SmartcarAuth: NSObject {
     the output of the executed completion function
     */
 
-    public func handleCallback(with url: URL) -> Any? {
+    @objc public func handleCallback(with url: URL) -> Any? {
         let urlComp = URLComponents(url: url, resolvingAgainstBaseURL: false)
 
         guard let query = urlComp?.queryItems else {

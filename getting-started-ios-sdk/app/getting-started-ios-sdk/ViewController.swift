@@ -9,11 +9,13 @@
 import Alamofire
 import UIKit
 import SmartcarAuth
+import Firebase
 
 class ViewController: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var vehicleText = ""
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,9 @@ class ViewController: UIViewController {
         button.setTitle("Connect your vehicle", for: .normal)
         button.backgroundColor = UIColor.black
         self.view.addSubview(button)
+        
+        // create Firebase database reference
+        ref = Database.database().reference()
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,8 +60,30 @@ class ViewController: UIViewController {
 					print(result)
                     let JSON = result as! NSDictionary
                     
+//                    JSON is a JSON object containing
+//                {
+//                    age = "2019-04-14T02:04:13.156Z";
+//                    data =     {
+//                        latitude = "37.87641906738281";
+//                        longitude = "-105.5240783691406";
+//                    };
+//                }
+                    
+                    
+                    //data is a JSON object containing
+                    //                {
+                    //                    data =     {
+                    //                        latitude = "37.87641906738281";
+                    //                        longitude = "-105.5240783691406";
+                    //                    };
+                    //                }
+                    
+                    // Adding JSON data to Firebase
+                    self.ref.child("locations").child(UUID().uuidString).setValue(JSON)
+                    
                     let data = JSON.object(forKey: "data")! as! NSDictionary
 					
+                    // I am extracting longitdude and latitude from the data json object
 					let longitude = data.object(forKey: "longitude")!  //as! String
 					let latitude = data.object(forKey: "latitude")!  //as! String
 
