@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         button.addTarget(self, action: #selector(self.connectPressed(_:)), for: .touchUpInside)
         button.setTitle("Connect your vehicle", for: .normal)
         button.backgroundColor = UIColor.black
+		button.center = self.view.center
         self.view.addSubview(button)
         
         // create Firebase database reference
@@ -60,37 +61,6 @@ class ViewController: UIViewController {
 					print(result)
                     let JSON = result as! NSDictionary
                     
-//                    JSON is a JSON object containing
-//                {
-//                    age = "2019-04-14T02:04:13.156Z";
-//                    data =     {
-//                        latitude = "37.87641906738281";
-//                        longitude = "-105.5240783691406";
-//                    };
-//                }
-                    
-                    
-                    //data is a JSON object containing
-                    //                {
-                    //                    data =     {
-                    //                        latitude = "37.87641906738281";
-                    //                        longitude = "-105.5240783691406";
-                    //                    };
-                    //                }
-                    
-                    
-                    // TO READ FROM FIREBASE
-//                    ref.child("locations").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-//                        // Get user value
-//                        let value = snapshot.value as? NSDictionary
-//                        let age = value?["age"] as? String ?? ""
-//                        now use age how you like...
-//
-//                        // ...
-//                    }) { (error) in
-//                        print(error.localizedDescription)
-//                    }
-                    
                     // Adding JSON data to Firebase
                     self.ref.child("locations").child(UUID().uuidString).setValue(JSON)
                     
@@ -112,11 +82,11 @@ class ViewController: UIViewController {
         return ""
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? InfoViewController {
-            destinationVC.text = self.vehicleText
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destinationVC = segue.destination as? InfoViewController {
+//            destinationVC.text = self.vehicleText
+//        }
+//    }
 
 }
 
